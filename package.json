@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-template",
+  "version": "1.0.0",
+  "description": "A simple node.js template for future projects.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximumstock/nodejs-template.git"
+  },
+  "author": "Maximilian Stock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maximumstock/nodejs-template/issues"
+  },
+  "homepage": "https://github.com/maximumstock/nodejs-template#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
