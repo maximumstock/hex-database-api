@@ -12,7 +12,7 @@
     "no-undef": 1,
     "quotes": [2, "single"],
     "curly": [2, "all"],
-    "indent": [2, 4],
+    "indent": [0, 4],
     "eqeqeq": 2
   }
 }
