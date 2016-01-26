@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm test",
+    "test": "node node_modules/istanbul/lib/cli cover _mocha 'test/**/*.js'",
     "start": "node server.js"
   },
   "repository": {
@@ -22,7 +22,11 @@
   "homepage": "https://github.com/maximumstock/hex-database-api#readme",
   "devDependencies": {
     "chai": "^3.4.1",
-    "mocha": "^2.3.4"
+    "co-mocha": "^1.1.2",
+    "co-supertest": "0.0.10",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
   },
   "dependencies": {
     "bunyan": "^1.5.1",
