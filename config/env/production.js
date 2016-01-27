@@ -8,19 +8,21 @@ if (!process.env.PORT)  {
     throw new Error('process.env.PORT not provided');
 }
 if (!process.env.DBHOST)  {
-    throw new Error('process.env.PORT not provided');
+    throw new Error('process.env.DBHOST not provided');
 }
 if (!process.env.DBNAME)  {
-    throw new Error('process.env.PORT not provided');
+    throw new Error('process.env.DBNAME not provided');
 }
 if (!process.env.DBUSER)  {
-    throw new Error('process.env.PORT not provided');
+    throw new Error('process.env.DBUSER not provided');
 }
 if (!process.env.DBPASS)  {
-    throw new Error('process.env.PORT not provided');
+    throw new Error('process.env.DBPASS not provided');
 }
 
 module.exports = {
+
+    environment: 'production',
 
     port: process.env.PORT,
     dbhost: process.env.DBHOST,
