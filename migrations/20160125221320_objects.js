@@ -3,6 +3,7 @@
 exports.up = function(knex, Promise) {
 
     return knex.schema.createTable('objects', function(table) {
+        table.increments();
         table.json('data', true);
     });
 

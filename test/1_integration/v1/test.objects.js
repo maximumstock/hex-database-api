@@ -182,6 +182,66 @@ describe('/objects', function() {
 
         });
 
+        it('should support searching by type by providing an array of strings', function*() {
+
+            let payload = {
+                type: ['Artifact', 'Troop']
+            };
+
+            const result = yield request.post(SEARCH_ENDPOINT_URL).send(payload).expect('Content-Type', 'application/json; charset=utf-8').expect(200).end();
+            expect(result.body).to.be.an('array');
+            expect(result.body.length).to.not.equal(0);
+
+            result.body.forEach(function(a) {
+                payload.type.forEach(function(t) {
+                    expect(a.type.indexOf(t)).to.not.equal(-1);
+                });
+            });
+
+        });
+
+        it('should support searching by color by providing an array of strings', function*() {
+
+            let payload = {
+                color: ['Ruby', 'Diamond']
+            };
+
+            const result = yield request.post(SEARCH_ENDPOINT_URL).send(payload).expect('Content-Type', 'application/json; charset=utf-8').expect(200).end();
+            expect(result.body).to.be.an('array');
+            expect(result.body.length).to.not.equal(0);
+
+            result.body.forEach(function(a) {
+                payload.color.forEach(function(t) {
+                    expect(a.color.indexOf(t)).to.not.equal(-1);
+                });
+            });
+
+        });
+
+        it('should support searching by color/threshold by providing an array of objects', function*() {
+
+            let payload = {
+                threshold: [{
+                    shard: 'Diamond',
+                    quantity: 2
+                }, {
+                    shard: 'Ruby',
+                    quantity: 2
+                }]
+            };
+
+            const result = yield request.post(SEARCH_ENDPOINT_URL).send(payload).expect('Content-Type', 'application/json; charset=utf-8').expect(200).end();
+            expect(result.body).to.be.an('array');
+            expect(result.body.length).to.not.equal(0);
+
+            result.body.forEach(function(a) {
+                payload.threshold.forEach(function(t) {
+                    expect(JSON.stringify(a.threshold).indexOf(JSON.stringify(t))).to.not.equal(-1); // a bit dirty but should yield the correct value
+                });
+            });
+
+        });
+
     });
 
 
