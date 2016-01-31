@@ -2,8 +2,7 @@
 
 const config = require('./config');
 
-module.exports = {
-
+const knexConfig = {
     client: 'postgresql',
     connection: {
         database: config.dbname,
@@ -14,5 +13,12 @@ module.exports = {
         min: 2,
         max: 10
     }
+};
+
+module.exports = {
+
+    development: knexConfig,
+    staging: knexConfig,
+    production: knexConfig
 
 };
