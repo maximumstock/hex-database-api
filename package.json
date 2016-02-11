@@ -1,7 +1,7 @@
 {
   "name": "hex-database-api",
   "version": "1.0.0",
-  "description": "A REST-like node.js api to provide information about cards, equipment, boosters, sets, etc. for the HEX TCG in JSON.",
+  "description": "A RESTlike web api with static data for cards, equipment, etc. of Cryptozoic's tcg HEX in JSON.",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/maximumstock/hex-database-api#readme",
   "devDependencies": {
+    "apidoc": "^0.14.0",
     "chai": "^3.4.1",
     "co-mocha": "^1.1.2",
     "co-supertest": "0.0.10",

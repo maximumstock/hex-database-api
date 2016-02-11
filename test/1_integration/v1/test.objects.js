@@ -8,19 +8,6 @@ const request = require('co-supertest').agent(app.listen());
 
 describe('/objects', function() {
 
-    describe('GET /objects', function() {
-
-        it('should return an array and 200 OK', function*() {
-
-            const result = yield request.get('/v1/objects').expect('Content-Type', 'application/json; charset=utf-8').expect(200).end();
-            expect(result.body).to.be.an('array');
-
-        });
-
-    });
-
-
-
     describe('POST /objects/search', function() {
 
         const SEARCH_ENDPOINT_URL = '/v1/objects/search';

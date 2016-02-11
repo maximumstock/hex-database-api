@@ -24,7 +24,9 @@ All these values are composed of alphabetically sorted string/object arrays.
 
 * `type` - The type of the object (eg. ***["Artifact"]*** for a normal Artifact or ***["Artifact", "Troop"]*** for an Artifact troop).
 * `color` - The colors of the object (eg. ***["Diamond", "Ruby"]***)
-* `threshold` - The treshold(s) of the object, for example:
+* `threshold` - The threshold(s) of the object
+
+Example for a `threshold` value:
 
 
     [
