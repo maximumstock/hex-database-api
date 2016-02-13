@@ -1,6 +1,6 @@
 # hex-database-api
 
-A REST-like node.js api to provide JSON data about cards, equipment, boosters, sets, etc. for the HEX TCG with data parsed from games files by **doc-x** for his [search engine](http://doc-x.net/hex/).
+A REST-like node.js api to provide JSON data about cards, equipment, boosters, sets, etc. for the HEX TCG with data parsed from games files by doc-x for his [search engine](http://doc-x.net/hex/).
 The information presented through this API about HEX is copyrighted by Cryptozoic Entertainment. This project is not produced, endorsed, supported, or affiliated with Cryptozoic Entertainment. All code and data compromising this API is provided without warranty.
 
 ## Installation
