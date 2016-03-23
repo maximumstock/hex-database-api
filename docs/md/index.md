@@ -1,4 +1,4 @@
-# General
+# hex-database-api documentation
 This API serves static JSON data like names, sets, rarities and more for most of the cards, pieces of equipment, champions, mercenaries and everything else the game files include at that time. It is updated daily by parsing search results from doc-x' search engine, which you can find [here](http://doc-x.net/hex/).
 As most of the time this API does not differentiate between cards and other types of things, the term 'objects' is used instead.
 So whenever 'objects' are referenced in this documentation, it can be either a card, an item, a piece of equipment, etc.

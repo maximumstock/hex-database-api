@@ -94,6 +94,17 @@ describe('/objects', function() {
 
         });
 
+        it('should support searching by uuid', function*() {
+
+          let testUUID = '0040fd2f-d448-409e-b54e-9223723fe79d';
+
+          const result = yield request.post(SEARCH_ENDPOINT_URL).send({uuid: testUUID}).expect('Content-Type', 'application/json; charset=utf-8').expect(200).end();
+          expect(result.body).to.be.an('array');
+          expect(result.body.length).to.equal(1);
+          expect(result.body[0].uuid).to.equal(testUUID);
+
+        });
+
         it('should support searching by atk/health/socket_count/cost with a range using lt/gt', function*() {
 
             let payload = {

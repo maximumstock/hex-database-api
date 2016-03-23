@@ -14,13 +14,14 @@ All results of your search are sorted by the name of the object in ascending ord
 **Strings**
 
 `name` and `sub_type` are searched for by looking for objects whose `name`/`sub_type` contains the value you provide.
-Those searches are case-insensitive, while the rest are simple lookups for matching string.
+Those searches are case-insensitive, while the rest are simple lookups for matching strings.
 
 * `name`
 * `sub_type`
 * `faction`
 * `rarity`
 * `set_number`
+* `uuid`
 
 **Integers**
 
