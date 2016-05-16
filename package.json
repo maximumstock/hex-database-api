@@ -25,6 +25,7 @@
     "co-mocha": "^1.1.2",
     "co-supertest": "0.0.10",
     "istanbul": "^0.4.2",
+    "markdown-styles": "^3.1.5",
     "mocha": "^2.3.4",
     "require-new": "^1.1.0",
     "supertest": "^1.1.0"
@@ -44,7 +45,6 @@
     "koa-static": "^2.0.0",
     "koa-static-folder": "^0.1.6",
     "lodash": "^4.0.1",
-    "markdown-styles": "^3.1.4",
     "pg": "^4.4.3",
     "request": "^2.67.0"
   }
