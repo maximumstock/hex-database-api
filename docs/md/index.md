@@ -17,7 +17,11 @@ Here is a list of all currently available API versions.
 * [v1](v1/index.html)
 
 # Feedback
-If you have any feedback, you can discuss it [here](https://forums.cryptozoic.com/showthread.php?t=43933) or contact me via [email](mailto:cwik@hexsales.net).
+If you have any feedback, you can discuss it [here](http://board.hex.gameforge.com/index.php?thread/43933-hex-database-api/&postID=577328#post577328) or contact me via [email](mailto:me@maximumstock.net).
+
+# Source Code
+For those of you who are interested, the code for this API is publicly available
+[here](https://www.github.com/maximumstock/hex-database-api.git).
 
 ---
 
