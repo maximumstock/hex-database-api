@@ -79,9 +79,13 @@ describe('/objects', function() {
 
         });
 
+        //  The old set id property was removed and now contains a
+        //  more or less qualified name of the set.
+        //  Ex. '001' became 'Shards of Fate'
+
         it('should support searching by set_number', function*() {
 
-            let testSetNumber = '001';
+            let testSetNumber = 'Shards of Fate';
 
             const result = yield request.post(SEARCH_ENDPOINT_URL).send({'set_number': testSetNumber}).expect('Content-Type', 'application/json; charset=utf-8').expect(200).end();
             expect(result.body).to.be.an('array');
@@ -90,6 +94,21 @@ describe('/objects', function() {
             // every returned object should have that set_number
             result.body.forEach(function(a) {
                 expect(a.set_number).to.equal(testSetNumber);
+            });
+
+        });
+
+        it('should support searching by artist name', function*() {
+
+            let testArtistName = 'Zoltan Boros';
+
+            const result = yield request.post(SEARCH_ENDPOINT_URL).send({artist: testArtistName}).expect('Content-Type', 'application/json; charset=utf-8').expect(200).end();
+            expect(result.body).to.be.an('array');
+            expect(result.body.length).to.not.equal(0);
+
+            // every returned object should have that artist name
+            result.body.forEach(function(a) {
+                expect(a.artist).to.equal(testArtistName);
             });
 
         });

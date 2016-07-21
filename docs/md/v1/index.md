@@ -1,5 +1,11 @@
 ### Documentation for version 1 (v1) of this API.
 
+# Changelog
+
+* 2016-07-20
+  * Added `equipment_uuids` and `artist` to properties
+  * Added `artist` to searchable properties
+
 # API Endpoints
 
 ### Search through objects
@@ -22,6 +28,7 @@ Those searches are case-insensitive, while the rest are simple lookups for match
 * `rarity`
 * `set_number`
 * `uuid`
+* `artist`
 
 **Integers**
 
@@ -90,9 +97,10 @@ All results of your query are sorted by the chosen property in ascending order.
 
 Examples:
 
-If you want to know which pr`GET /v1/objects/properties/rarity`, which yields:
+If you want to know which different values the property `rarity` can have, try `GET /v1/objects/properties/rarity`, which yields:
 
     [
+        "", // eg. Gems, Packs, Sleeves, etc.
         "Champion",
         "Common",
         "Epic",

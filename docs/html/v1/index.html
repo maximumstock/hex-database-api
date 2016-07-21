@@ -10,6 +10,14 @@
   </head>
   <body>
     <article class="markdown-body"><h3 id="documentation-for-version-1-v1-of-this-api-"><a class="header-link" href="#documentation-for-version-1-v1-of-this-api-"></a>Documentation for version 1 (v1) of this API.</h3>
+<h1 id="changelog"><a class="header-link" href="#changelog"></a>Changelog</h1>
+<ul class="list">
+<li>2016-07-20<ul class="list">
+<li>Added <code>equipment_uuids</code> and <code>artist</code> to properties</li>
+<li>Added <code>artist</code> to searchable properties</li>
+</ul>
+</li>
+</ul>
 <h1 id="api-endpoints"><a class="header-link" href="#api-endpoints"></a>API Endpoints</h1>
 <h3 id="search-through-objects"><a class="header-link" href="#search-through-objects"></a>Search through objects</h3>
 <ul class="list">
@@ -29,6 +37,7 @@ Those searches are case-insensitive, while the rest are simple lookups for match
 <li><code>rarity</code></li>
 <li><code>set_number</code></li>
 <li><code>uuid</code></li>
+<li><code>artist</code></li>
 </ul>
 <p><strong>Integers</strong></p>
 <p>These properties support a wider variety of searches.
@@ -44,15 +53,15 @@ The wider operand will be used, which means if you specify <strong><em>lte</em><
 <p>Examples:</p>
 <p>To list all objects with <code>atk</code>-value of 10:</p>
 <pre class="hljs"><code>{
-    "<span class="hljs-attribute">atk</span>": <span class="hljs-value"><span class="hljs-number">10</span>
-</span>}</code></pre><p>To list all objects with <code>cost</code> between 3-6 and <code>atk</code> of 5</p>
+    <span class="hljs-attr">"atk"</span>: <span class="hljs-number">10</span>
+}</code></pre><p>To list all objects with <code>cost</code> between 3-6 and <code>atk</code> of 5</p>
 <pre class="hljs"><code>{
-    "<span class="hljs-attribute">cost</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">lte</span>": <span class="hljs-value"><span class="hljs-number">6</span></span>,
-        "<span class="hljs-attribute">gte</span>": <span class="hljs-value"><span class="hljs-number">3</span>
-    </span>}</span>,
-    "<span class="hljs-attribute">atk</span>": <span class="hljs-value"><span class="hljs-number">5</span>
-</span>}</code></pre><p><strong>Arrays</strong></p>
+    <span class="hljs-attr">"cost"</span>: {
+        <span class="hljs-attr">"lte"</span>: <span class="hljs-number">6</span>,
+        <span class="hljs-attr">"gte"</span>: <span class="hljs-number">3</span>
+    },
+    <span class="hljs-attr">"atk"</span>: <span class="hljs-number">5</span>
+}</code></pre><p><strong>Arrays</strong></p>
 <ul class="list">
 <li><code>type</code></li>
 <li><code>color</code></li>
@@ -63,15 +72,15 @@ The wider operand will be used, which means if you specify <strong><em>lte</em><
 <pre class="hljs"><code>{
     <span class="hljs-string">"type"</span>: [<span class="hljs-string">"Artifact"</span>, <span class="hljs-string">"Troop"</span>] <span class="hljs-regexp">//</span> <span class="hljs-keyword">this</span> <span class="hljs-keyword">is</span> case-sensitive but the order <span class="hljs-keyword">of</span> the elements does <span class="hljs-keyword">not</span> matter, so [<span class="hljs-string">"Troop"</span>, <span class="hljs-string">"Artifact"</span>] works too
 }</code></pre><p>To list all objects with thresholds: Wild 1, Ruby 1</p>
-<pre class="hljs"><code><span class="hljs-collection">{
-    <span class="hljs-string">"threshold"</span>: <span class="hljs-collection">[<span class="hljs-collection">{
+<pre class="hljs"><code>{
+    <span class="hljs-string">"threshold"</span>: [{
         <span class="hljs-string">"shard"</span>: <span class="hljs-string">"Wild"</span>, // same here, these array elements can be sorted differently
         <span class="hljs-string">"quantity"</span>: <span class="hljs-number">1</span>
-    }</span>, <span class="hljs-collection">{
+    }, {
         <span class="hljs-string">"shard"</span>: <span class="hljs-string">"Ruby"</span>,
         <span class="hljs-string">"quantity"</span>: <span class="hljs-number">1</span>
-    }</span>]</span>
-}</span></code></pre><h3 id="what-do-those-properties-mean-"><a class="header-link" href="#what-do-those-properties-mean-"></a>What do those properties mean?</h3>
+    }]
+}</code></pre><h3 id="what-do-those-properties-mean-"><a class="header-link" href="#what-do-those-properties-mean-"></a>What do those properties mean?</h3>
 <ul class="list">
 <li>HTTP-Method: GET</li>
 <li>URL: <code>/v1/objects/properties/:propertyName</code></li>
@@ -79,8 +88,9 @@ The wider operand will be used, which means if you specify <strong><em>lte</em><
 <p>To get an idea what values each property described above can have and also to have a dynamic source to look it up there is a dedicated endpoint to explore the data.
 All results of your query are sorted by the chosen property in ascending order.</p>
 <p>Examples:</p>
-<p>If you want to know which pr<code>GET /v1/objects/properties/rarity</code>, which yields:</p>
+<p>If you want to know which different values the property <code>rarity</code> can have, try <code>GET /v1/objects/properties/rarity</code>, which yields:</p>
 <pre class="hljs"><code>[
+    <span class="hljs-string">""</span>, // eg. Gems, Packs, Sleeves, etc.
     <span class="hljs-string">"Champion"</span>,
     <span class="hljs-string">"Common"</span>,
     <span class="hljs-string">"Epic"</span>,

@@ -18,6 +18,7 @@ To run the migration you need a PostgreSQL database set up with credentials spec
 `node lib/updater/index.js` starts a script which actually does all the work in terms of updating the data for all cards, pieces of equipment, etc.
 
 ## Test
+
 `npm test` runs a few unit and integration tests.
 
 ## Start API
