@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node node_modules/istanbul/lib/cli cover _mocha 'test/**/*.js' && bin/build_docs.sh",
-    "start": "node server.js"
+    "test": "node node_modules/istanbul/lib/cli cover _mocha 'test/**/*.js'",
+    "start": "node server.js",
+    "update": "node lib/updater/index.js"
   },
   "repository": {
     "type": "git",

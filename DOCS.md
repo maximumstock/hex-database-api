@@ -1,10 +1,5 @@
-### Documentation for version 1 (v1) of this API.
-
-# Changelog
-
-* 2016-07-20
-  * Added `equipment_uuids` and `artist` to properties
-  * Added `artist` to searchable properties
+# hex-database-api API docuemntation
+This API is currently active at [http://hexdbapi.hexsales.net](http://hexdbapi.hexsales.net).
 
 # API Endpoints
 
